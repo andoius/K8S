@@ -47,7 +47,7 @@ To start with hyper-v
 
 `minikube update-check`
 
-## Start minikube
+## Start minikube (After Install)
 previously we created a virtual switch, the name of that switch will be used here to bind the minikube to that switch
 
 to check the available commands for minikube run
@@ -61,7 +61,31 @@ to check the available commands for minikube run
 |hyperv-virtual-switch |Specify virtual network switch to be used “VM-External-Switch was created in previous steps”||
 |kubernetes-version| string: Specify version of Kubernetes to be installed (ex. v1.2.3)||
 
+**Stop minikube**
+
+`minikube stop`
+
+**Disable dynamic memory**
+***From Powershell**
+
+`Set-VMMemory minikube -DynamicMemoryEnabled $false`
+
+**Start minikube**
+
+`minikube start`
+
+
+## Additional components
+
+|Component| Description|
+|--|--|
+|Heapster|Cluster performance monitor|
+|Ingress|load balancing, SSL termination and name-based virtual hosting|
+|Fluentd, ElasticSearch, and Kibana (EFK)|Log manager stack|
+|Helm|Kubernetes package manager|
+
 -  [x] Virtual Switch Install
 -  [x] Chocolatey Install
 -  [x] MiniKube Install
--  [ ] Start minikube
+-  [x] Start minikube
+- [] Additional components
